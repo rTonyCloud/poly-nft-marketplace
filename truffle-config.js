@@ -56,7 +56,7 @@ module.exports = {
       maticmainnet: {
         provider: () => new HDWalletProvider(mnemonic, 'https://rpc-mainnet.maticvigil.com/v1/83850c4cc99c8fa3410549efe75d61958e5dafcf'),
         network_id: '137'
-      }
+      },
 
     // Another network with more advanced options...
     // advanced: {
@@ -83,7 +83,7 @@ module.exports = {
     // network_id: 2111,   // This network is yours, in the cloud.
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
-  },
+  
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
@@ -125,4 +125,6 @@ module.exports = {
     //   }
     // }
   // }
-};
+  }
+}
+}

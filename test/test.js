@@ -34,6 +34,15 @@ contract('market', (accounts) => {
                     const tokenURI = await contractN.tokenURI(1)
                     assert.Equal(tokenURI, 'http://ipfs.imageaddress1')
                 })
+                it('NFT Marketplace contract create a new token', async() =>{
+                    let listingPrice = await contractM.getListingPrice()
+                    console.log('listingPrice: ', web3.utils.fromWei(listingPrice.toString(), 'ether'))
+                    let aunctionPrice = ethers.utils.parseUnits('10', 'ether')
+                    await contractM.createMarketItem(contractN.address, 1, aunctionPrice, { value: listingPrice })
+                    const items = await contractM.fetchMarketItems()
+
+                    console.log('items: ', items)
+                })
             })
         })
     })
